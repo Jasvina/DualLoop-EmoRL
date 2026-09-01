@@ -1,0 +1,4 @@
+run,n,sage_overall,success_rate,failure_rate,state_S,state_A,state_B,state_C,state_F
+ours_run_1,100,81.02,49.0,9.0,49,30,7,5,9
+ours_run_2,100,78.58,50.0,13.0,50,24,12,1,13
+ours_run_3,100,78.11,48.0,12.0,48,29,7,4,12
