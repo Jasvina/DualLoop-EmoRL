@@ -59,7 +59,7 @@ def main() -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     fieldnames = list(rows[0])
     with args.output.open("w", encoding="utf-8", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fieldnames)
+        writer = csv.DictWriter(stream, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 

@@ -11,9 +11,11 @@ pdflatex main
 pdflatex main
 ```
 
-Compile the technical supplement from `paper/supplement/` while exposing the
-parent directory to TeX:
+Compile the technical supplement directly from `paper/supplement/`:
 
 ```bash
-TEXINPUTS=..: pdflatex TechnicalSupplement.tex
+pdflatex main.tex
 ```
+
+`TechnicalSupplement.tex` is retained as the identically rendered archival
+entry point used during submission preparation.
