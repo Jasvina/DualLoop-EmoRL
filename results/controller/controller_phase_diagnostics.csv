@@ -1,0 +1,3 @@
+phase,steps,complete_groups,effective_pool_mean,effective_pool_range,selected_probability_mean,selected_probability_range
+Uniform initialization,1-100,16-1590,24.00,24.00-24.00,0.0417,0.0417-0.0417
+Early adaptive,101-129,1606-2051,23.02,22.82-24.00,0.0429,0.0382-0.0475

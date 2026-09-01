@@ -1,0 +1,12 @@
+DualLoop-EmoRL
+
+The training integration is designed for the open-source VERL framework:
+https://github.com/verl-project/verl
+
+VERL is Copyright 2023-2024 ByteDance Ltd. and/or its affiliates and is
+distributed under the Apache License, Version 2.0.
+
+The training scenarios are derived from the public RLVER resources associated
+with "Reinforcement Learning with Verifiable Emotion Rewards for Empathetic
+Agents." Dataset, benchmark, model, and service terms remain governed by their
+respective upstream sources.

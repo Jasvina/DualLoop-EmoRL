@@ -1,0 +1,17 @@
+{
+  "paired_scenarios": 100,
+  "uniform_mean": 72.23,
+  "full_mean": 78.58,
+  "paired_mean_difference": 6.35,
+  "bootstrap_95_ci": [
+    -0.43024999999999636,
+    13.12
+  ],
+  "two_sided_paired_randomization_p": 0.07269927300726993,
+  "full_better_count": 37,
+  "tied_count": 40,
+  "uniform_better_count": 23,
+  "seed": 20260723,
+  "bootstrap_samples": 100000,
+  "randomization_samples": 100000
+}

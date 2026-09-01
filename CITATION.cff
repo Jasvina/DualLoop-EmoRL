@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+title: "DualLoop-EmoRL"
+message: "If you use this repository, please cite the associated paper."
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/Jasvina/DualLoop-EmoRL"
+version: 0.1.0
+date-released: 2026-09-01
+authors:
+  - family-names: Wei
+    given-names: Yi
+  - family-names: Jiang
+    given-names: Shuo
+  - family-names: Dou
+    given-names: Huaixia
+  - family-names: Zhu
+    given-names: Jie
+  - family-names: Li
+    given-names: Junhui
+  - family-names: Guo
+    given-names: Lifan
+  - family-names: Chen
+    given-names: Feng
+  - family-names: Zhang
+    given-names: Chi
+preferred-citation:
+  type: article
+  title: "Dual-Loop Self-Evolution via Verifiable Emotion Feedback for Multi-Turn Empathetic Dialogue"
+  year: 2026
+  authors:
+    - family-names: Wei
+      given-names: Yi
+    - family-names: Jiang
+      given-names: Shuo
+    - family-names: Dou
+      given-names: Huaixia
+    - family-names: Zhu
+      given-names: Jie
+    - family-names: Li
+      given-names: Junhui
+    - family-names: Guo
+      given-names: Lifan
+    - family-names: Chen
+      given-names: Feng
+    - family-names: Zhang
+      given-names: Chi
