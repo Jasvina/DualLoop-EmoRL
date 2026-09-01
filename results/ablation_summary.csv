@@ -1,0 +1,9 @@
+variant,sage_overall,delta_from_complete_run
+Complete framework,78.11,0.00
+Interaction State Only,69.42,-8.69
+Scenario-only allocation,70.03,-8.08
+Soft outcome mapping,76.52,-1.59
+No hierarchical sharing,75.07,-3.04
+Variance-gated pass-rate controller,61.45,-16.66
+No uncertainty bonus,73.92,-4.19
+No uniform rehearsal,77.03,-1.08

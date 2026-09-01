@@ -3,6 +3,7 @@
 This directory contains artifacts supporting the public paper:
 
 - `paper_main_results.csv`: protocol-matched aggregate values in the main table.
+- `ablation_summary.csv`: single-run SAGE component ablations reported by the paper.
 - `sage/`: per-scenario outputs from three independent complete-method training
   runs and their recomputed summary.
 - `controller/`: controller phase, state-level, and 192-unit snapshots.

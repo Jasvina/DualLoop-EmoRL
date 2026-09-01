@@ -52,6 +52,8 @@ The repository contains the method-specific contribution rather than a fork of
 the full RL stack. GRPO, Ray/FSDP, and vLLM are supplied by a compatible
 [VERL](https://github.com/verl-project/verl) / RLVER runtime. This keeps the
 release focused and makes the changes introduced by this work easy to inspect.
+Runtime authors can use `docs/INTEGRATION.md` for the two required controller
+hooks and the invariants that preserve group-relative training.
 
 ## Quick Validation
 
@@ -99,7 +101,8 @@ threshold 50, hierarchical shrinkage and state prior 4, uncertainty weight
 | 3 | 78.11 | 48.0 | 12.0 |
 | **Mean / sample SD** | **79.24 / 1.56** | **49.0** | **11.33** |
 
-`results/paper_main_results.csv` contains the protocol-matched aggregate table.
+`results/paper_main_results.csv` contains the protocol-matched aggregate table,
+and `results/ablation_summary.csv` records the component ablations.
 Raw complete-method SAGE trajectories are retained in `results/sage/`; service
 URLs, timestamps, local paths, and experiment-tracking identifiers were removed.
 
@@ -121,6 +124,7 @@ derived from the public RLVER training scenarios cited in the paper. Dataset,
 benchmark, model, and API terms remain governed by their upstream licenses and
 providers. Model checkpoints and third-party benchmark packages are not
 redistributed here.
+`docs/RELEASE_SCOPE.md` lists the included artifacts and external dependencies.
 
 ## License
 
