@@ -2,6 +2,11 @@
 
 ## Released Scope
 
+The current SAGEVariant-PassCtrl runnable package has its own exact method and
+server instructions in `SAGEVAR_PASSCTRL.md` and
+`SERVER_RUNBOOK_SAGEVAR_PASSCTRL.md`. The remainder of this document records
+the earlier 24-state method-only release retained for provenance.
+
 This repository releases the method-specific code, exact training manifest,
 configuration, unit tests, complete-method SAGE result files, aggregate paper
 results, controller exports, state-validation records, and public paper source.
@@ -32,6 +37,8 @@ inclusion and exclusion policy, see `docs/RELEASE_SCOPE.md`.
 
 The exact command-line overrides are in
 `launch/train_dual_loop_qwen3_8b_n4.sh`.
+The reported software snapshot and the distinction between lightweight method
+validation and full training dependencies are documented in `ENVIRONMENT.md`.
 
 ## Controller
 
@@ -95,8 +102,9 @@ failed co-training variants and their diagnostics are recorded in
 
 Training scenarios and the 100-scenario SAGE test set are disjoint. SAGE,
 ESC-Eval, EIBench, ESConv, and human evaluation use the protocols described in
-the paper. Third-party evaluation code and model weights should be obtained from
-their official sources and remain under their original licenses.
+the paper and summarized in `EVALUATION.md`. Third-party evaluation code and
+model weights should be obtained from their official sources and remain under
+their original licenses.
 
 ## Integrity Checks
 
@@ -106,6 +114,7 @@ python scripts/validate_training_scenarios.py \
   --expected-rows 500 --expected-intents 8
 python -m unittest discover -s tests -v
 bash -n launch/train_dual_loop_qwen3_8b_n4.sh
+python scripts/verify_released_results.py
 ```
 
 To verify the byte-level integrity of the released research artifacts, run:

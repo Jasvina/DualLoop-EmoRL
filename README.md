@@ -1,5 +1,24 @@
 # DualLoop-EmoRL
 
+## Current corrected training release
+
+The runnable experiment currently under development is **SAGEVariant-PassCtrl**:
+500 complete SAGE-style training profiles, `GRPO_N=4`, and a profile-level
+pass-rate sampling controller. The complete source tree, generated profile
+pool, profile-generation utility, and server launcher are in
+[`release/work_sagevar_passctrl_train500_n4`](release/work_sagevar_passctrl_train500_n4).
+A ready-to-transfer archive is available in
+[`artifacts/sagevar_passctrl_train500_n4_code_with_profiles.zip`](artifacts/sagevar_passctrl_train500_n4_code_with_profiles.zip).
+
+Read [`docs/SAGEVAR_PASSCTRL.md`](docs/SAGEVAR_PASSCTRL.md) before comparing
+experiments and [`docs/SERVER_RUNBOOK_SAGEVAR_PASSCTRL.md`](docs/SERVER_RUNBOOK_SAGEVAR_PASSCTRL.md)
+before launching on a server.
+
+The older 24-state method-only implementation and paper artifacts below are
+retained for provenance. They are not the launcher or profile construction used
+by the current SAGEVariant-PassCtrl experiment. In particular, do not use any
+older `3diff`, `sead3`, or `train1500` package for the current experiment.
+
 Official implementation and research artifacts for **Dual-Loop Self-Evolution
 via Verifiable Emotion Feedback for Multi-Turn Empathetic Dialogue**.
 
@@ -41,7 +60,9 @@ hyperparameters, resume behavior, and validation commands are documented in
 [the reproducibility notes](docs/REPRODUCIBILITY.md). The
 [public-release scope](docs/RELEASE_SCOPE.md) records what is included,
 what must be obtained from upstream providers, and what is intentionally not
-published.
+published. See [`docs/ENVIRONMENT.md`](docs/ENVIRONMENT.md) for runtime versions,
+[`docs/INTEGRATION.md`](docs/INTEGRATION.md) for the controller hooks, and
+[`docs/EVALUATION.md`](docs/EVALUATION.md) for evaluation protocols and scaling.
 
 ## Paper-to-Code Map
 
@@ -92,6 +113,12 @@ python -m unittest discover -s tests -v
 ```
 
 The checks do not require model weights, GPUs, or access to the simulator API.
+Run every released integrity check, including result recomputation and
+manifest verification, with:
+
+```bash
+bash scripts/verify_release.sh
+```
 
 ## Training
 
@@ -131,6 +158,8 @@ threshold 50, hierarchical shrinkage and state prior 4, uncertainty weight
 and `results/ablation_summary.csv` records the component ablations.
 Raw complete-method SAGE trajectories are retained in `results/sage/`; service
 URLs, timestamps, local paths, and experiment-tracking identifiers were removed.
+`python scripts/verify_released_results.py` recomputes their principal metrics
+and verifies the reported three-run mean and sample standard deviation.
 
 ## Paper
 

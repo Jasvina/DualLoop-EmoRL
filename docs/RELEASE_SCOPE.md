@@ -6,6 +6,10 @@ the released training configuration, and trace the reported evidence.
 
 ## Included
 
+- The current complete SAGEVariant-PassCtrl runtime under
+  `release/work_sagevar_passctrl_train500_n4`, including its 500 generated
+  SAGE-style training profiles and generation utility.
+- A transfer-ready ZIP of that same runtime under `artifacts/`.
 - Method-specific controller and rollout-integration code.
 - Exact 500-scenario ordered training manifest.
 - Released Qwen3-8B launch configuration.
@@ -44,3 +48,9 @@ obtained from their official providers under the applicable terms:
 Exclusion does not change the method definition. The public implementation,
 configuration, manifest, tests, and supporting result exports are the
 canonical released artifacts.
+
+The generic RL runtime exclusion applies to the older method-only release at
+the repository root. The current SAGEVariant-PassCtrl experiment is also
+published as a self-contained runnable tree under `release/` at the user's
+request. Both release tracks exclude credentials, internal endpoints, model
+weights, checkpoints, generated caches, and obsolete three-difficulty data.
