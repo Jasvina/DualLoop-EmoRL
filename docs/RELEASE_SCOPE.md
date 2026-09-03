@@ -1,30 +1,46 @@
-# Release Scope
+# Public Release Scope
 
-This repository is a clean research release of the paper's method, training manifest, three SAGE result files, tests, and publication source.
+This repository is the curated public release for the paper. It contains the
+artifacts needed to inspect the method, validate its core logic, reconstruct
+the released training configuration, and trace the reported evidence.
 
 ## Included
 
-- The complete dual-loop controller used by the main method.
-- Deterministic realization of all 24 simulator-only interaction states.
-- Rollout-group integration that shares one condition across group members.
-- The 500-scenario training manifest and validation script.
-- The Qwen3-8B reproduction launcher and paper hyperparameters.
-- Sanitized per-scenario SAGE outputs for three independent runs.
-- Unit tests for controller updates, persistence, priors, prompts, and sampling.
-- Public paper source, referenced figures, and technical supplement.
+- Method-specific controller and rollout-integration code.
+- Exact 500-scenario ordered training manifest.
+- Released Qwen3-8B launch configuration.
+- Unit tests and validation utilities.
+- Aggregate paper results and three sanitized complete-method SAGE runs.
+- Controller evolution, 24-state, and 192-unit diagnostic exports.
+- Interaction-state validation records and analysis outputs.
+- Paper, bibliography, figure, technical-supplement, and appendix source.
+- License, third-party notices, citation metadata, and artifact hashes.
 
-## External Dependencies
+## Obtained Separately
 
-- A compatible VERL multi-turn training runtime.
-- Qwen3-8B weights obtained under the model's license.
-- A user-simulator and emotion-verifier API compatible with the launcher's environment variables.
-- SAGE, ESConv, ESC-Eval, and EIBench evaluation packages obtained from their official releases.
+The following dependencies are not authored by this project and must be
+obtained from their official providers under the applicable terms:
 
-## Not Included
+- Qwen3-8B model weights.
+- A compatible VERL/RLVER training runtime.
+- SAGE, ESConv/ESC-Eval, and EIBench evaluation packages and model weights.
+- User-simulator and verifier API access.
 
-- Model checkpoints or optimizer states.
-- API credentials, internal endpoints, OSS paths, or local filesystem paths.
-- Third-party model weights and benchmark repositories.
-- Obsolete prototypes, failed runs, generated caches, and duplicate experiment directories.
+## Intentionally Excluded
 
-These exclusions keep the release auditable and avoid redistributing third-party assets. They do not change the method implementation or the reported released SAGE results.
+- Model checkpoints and optimizer states, because of size and upstream model
+  licensing constraints.
+- Credentials, service URLs, internal storage paths, experiment-tracking IDs,
+  and machine-specific metadata.
+- Raw server logs, transient SQLite WAL files, caches, and failed-run outputs.
+- Superseded drafts, duplicate exports, inferred placeholders, and exploratory
+  analyses that are not evidence for the public paper.
+- Third-party repositories and benchmark bundles that should be obtained from
+  their maintainers.
+- Patent disclosures, invention-submission forms, and other confidential legal
+  materials. These are not research reproducibility artifacts and publishing
+  them can affect patent strategy.
+
+Exclusion does not change the method definition. The public implementation,
+configuration, manifest, tests, and supporting result exports are the
+canonical released artifacts.

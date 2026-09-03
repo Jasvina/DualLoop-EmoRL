@@ -35,6 +35,14 @@ paper/                    Public paper source, references, and figures
 docs/                     Reproducibility and provenance notes
 ```
 
+Start with the [artifact index](docs/ARTIFACT_INDEX.md) for a claim-by-claim
+map from the paper to released code, data, and results. The exact environment,
+hyperparameters, resume behavior, and validation commands are documented in
+[the reproducibility notes](docs/REPRODUCIBILITY.md). The
+[public-release scope](docs/RELEASE_SCOPE.md) records what is included,
+what must be obtained from upstream providers, and what is intentionally not
+published.
+
 ## Paper-to-Code Map
 
 | Paper component | Source |
@@ -47,6 +55,22 @@ docs/                     Reproducibility and provenance notes
 | Uniform initialization and rehearsal | `EmotionBoundaryController.sampling_distribution` |
 | Persistent controller history | SQLite operations in `emotion_boundary_controller.py` |
 | Optimization invocation | `launch/train_dual_loop_qwen3_8b_n4.sh` |
+
+## Design Decision: Why the User Is Frozen
+
+Early variants jointly optimized user-side tokens with rewards derived from the
+assistant's final emotion score. Across binary success-rate, dense boundary,
+hand-written user-quality proxy, and latent-state variants, this produced sparse
+credit, non-stationary training, or proxy optimization without held-out SAGE
+improvement. The released method therefore treats the user simulator as a
+frozen environment and adapts only the distribution over explicit interaction
+conditions. This keeps scenario semantics and emotional dynamics stable while
+still moving training experience toward the current policy boundary.
+
+The negative-results record and the reasoning behind the final design are in
+[`docs/SELF_PLAY_EXPERIMENTS.md`](docs/SELF_PLAY_EXPERIMENTS.md). Exact reward,
+threshold, grouping, and resume semantics are documented in
+[`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md).
 
 The repository contains the method-specific contribution rather than a fork of
 the full RL stack. GRPO, Ray/FSDP, and vLLM are supplied by a compatible
@@ -66,6 +90,8 @@ python scripts/validate_training_scenarios.py \
   --expected-rows 500 --expected-intents 8
 python -m unittest discover -s tests -v
 ```
+
+The checks do not require model weights, GPUs, or access to the simulator API.
 
 ## Training
 
@@ -116,6 +142,10 @@ bibtex main
 pdflatex main
 pdflatex main
 ```
+
+The technical supplement and recovered appendix source are under
+`paper/supplement/`. Final submission PDFs are not treated as canonical build
+artifacts; the tracked LaTeX source and figure assets are.
 
 ## Data and Model Provenance
 
