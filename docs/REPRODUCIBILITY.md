@@ -2,10 +2,10 @@
 
 ## Released Scope
 
-The current SAGEVariant-PassCtrl runnable package has its own exact method and
-server instructions in `SAGEVAR_PASSCTRL.md` and
-`SERVER_RUNBOOK_SAGEVAR_PASSCTRL.md`. The remainder of this document records
-the earlier 24-state method-only release retained for provenance.
+This document describes the paper's 24-state hierarchical method. The separate
+SAGEVariant-PassCtrl experiment has its own method and server instructions in
+`SAGEVAR_PASSCTRL.md` and `SERVER_RUNBOOK_SAGEVAR_PASSCTRL.md`; its results are
+not used as evidence for the paper.
 
 This repository releases the method-specific code, exact training manifest,
 configuration, unit tests, complete-method SAGE result files, aggregate paper

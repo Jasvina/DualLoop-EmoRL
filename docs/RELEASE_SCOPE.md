@@ -6,7 +6,7 @@ the released training configuration, and trace the reported evidence.
 
 ## Included
 
-- The current complete SAGEVariant-PassCtrl runtime under
+- A separate SAGEVariant-PassCtrl experimental runtime under
   `release/work_sagevar_passctrl_train500_n4`, including its 500 generated
   SAGE-style training profiles and generation utility.
 - A transfer-ready ZIP of that same runtime under `artifacts/`.
@@ -49,8 +49,9 @@ Exclusion does not change the method definition. The public implementation,
 configuration, manifest, tests, and supporting result exports are the
 canonical released artifacts.
 
-The generic RL runtime exclusion applies to the older method-only release at
-the repository root. The current SAGEVariant-PassCtrl experiment is also
-published as a self-contained runnable tree under `release/` at the user's
-request. Both release tracks exclude credentials, internal endpoints, model
-weights, checkpoints, generated caches, and obsolete three-difficulty data.
+The paper implementation at the repository root is the canonical 24-state
+hierarchical method. SAGEVariant-PassCtrl is published as a separate runnable
+experiment under `release/` and must not be used as a substitute for the
+paper's reported method or evidence. Both release tracks exclude credentials,
+internal endpoints, model weights, checkpoints, generated caches, and obsolete
+three-difficulty data.

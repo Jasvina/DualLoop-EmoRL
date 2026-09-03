@@ -1,24 +1,5 @@
 # DualLoop-EmoRL
 
-## Current corrected training release
-
-The runnable experiment currently under development is **SAGEVariant-PassCtrl**:
-500 complete SAGE-style training profiles, `GRPO_N=4`, and a profile-level
-pass-rate sampling controller. The complete source tree, generated profile
-pool, profile-generation utility, and server launcher are in
-[`release/work_sagevar_passctrl_train500_n4`](release/work_sagevar_passctrl_train500_n4).
-A ready-to-transfer archive is available in
-[`artifacts/sagevar_passctrl_train500_n4_code_with_profiles.zip`](artifacts/sagevar_passctrl_train500_n4_code_with_profiles.zip).
-
-Read [`docs/SAGEVAR_PASSCTRL.md`](docs/SAGEVAR_PASSCTRL.md) before comparing
-experiments and [`docs/SERVER_RUNBOOK_SAGEVAR_PASSCTRL.md`](docs/SERVER_RUNBOOK_SAGEVAR_PASSCTRL.md)
-before launching on a server.
-
-The older 24-state method-only implementation and paper artifacts below are
-retained for provenance. They are not the launcher or profile construction used
-by the current SAGEVariant-PassCtrl experiment. In particular, do not use any
-older `3diff`, `sead3`, or `train1500` package for the current experiment.
-
 Official implementation and research artifacts for **Dual-Loop Self-Evolution
 via Verifiable Emotion Feedback for Multi-Turn Empathetic Dialogue**.
 
@@ -53,6 +34,12 @@ tests/                    Controller and state-prompt unit tests
 paper/                    Public paper source, references, and figures
 docs/                     Reproducibility and provenance notes
 ```
+
+An additional, separately documented **SAGEVariant-PassCtrl** experiment is
+available under `release/` with a transfer archive under `artifacts/`. It uses a
+different profile-level controller and is not evidence for, or a replacement
+for, the paper's 24-state hierarchical method. See
+[`docs/SAGEVAR_PASSCTRL.md`](docs/SAGEVAR_PASSCTRL.md) for its exact scope.
 
 Start with the [artifact index](docs/ARTIFACT_INDEX.md) for a claim-by-claim
 map from the paper to released code, data, and results. The exact environment,

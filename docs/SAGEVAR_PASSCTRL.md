@@ -2,10 +2,11 @@
 
 ## Status
 
-This document describes the corrected main-method package in
-`release/work_sagevar_passctrl_train500_n4`. It supersedes the earlier
-three-difficulty/1,500-profile experiment. The current main method has no
-TopVar gate and never permanently deletes a profile.
+This document describes a separate profile-level curriculum experiment in
+`release/work_sagevar_passctrl_train500_n4`. It supersedes that experiment's
+earlier three-difficulty/1,500-profile variant, but it does not supersede the
+paper's 24-state hierarchical method. This variant has no TopVar gate and
+never permanently deletes a profile.
 
 ## Data construction
 
